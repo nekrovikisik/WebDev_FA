@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Лабораторная 1. Переменные, типы данных</title>
-<!--  Получить навыки работы с переменными, различными типами данных, операциями над ними.-->
-<!--Задания для выполнения-->
-<!--1.	Попросите пользователя ввести любое число и сохраните его в переменную.-->
-<!--2.	Создайте калькулятор, который будет выполнять все арифметические операции над любыми введенными пользователем двумя числами.-->
-<!--3.	Необходимо попросить  пользователя задумать число. Затем он должен  умножить это число  на 2 и прибавить к полученному результату 7.
-        То, что вышло в итоге, нужно ввести в диалоговом окне prompt(). Вы должны выдать пользователю, какое число он задумал.-->
-<!--4.	С помощью метода prompt() получите сначала имя пользователя, затем год его рождения и сохраните в 2 переменные. Вычислите возраст пользователя, и выведите его в абзаце с помощью document.write() в таком формате "Антон: 24".-->
-<!--5.	Сохраните калькулятор и отправьте на GitHub в репозиторий Student, используя формат в названии Фамилия(латинскими буквами)_1.-->
+    <!--  Получить навыки работы с переменными, различными типами данных, операциями над ними.-->
+    <!--Задания для выполнения-->
+    <!--1.	Попросите пользователя ввести любое число и сохраните его в переменную.-->
+    <!--2.	Создайте калькулятор, который будет выполнять все арифметические операции над любыми введенными пользователем двумя числами.-->
+    <!--3.	Необходимо попросить  пользователя задумать число. Затем он должен  умножить это число  на 2 и прибавить к полученному результату 7.
+            То, что вышло в итоге, нужно ввести в диалоговом окне prompt(). Вы должны выдать пользователю, какое число он задумал.-->
+    <!--4.	С помощью метода prompt() получите сначала имя пользователя, затем год его рождения и сохраните в 2 переменные. Вычислите возраст пользователя, и выведите его в абзаце с помощью document.write() в таком формате "Антон: 24".-->
+    <!--5.	Сохраните калькулятор и отправьте на GitHub в репозиторий Student, используя формат в названии Фамилия(латинскими буквами)_1.-->
 
 <body>
 
@@ -21,44 +21,42 @@
 
 
 <script>
-  function calculator() {
-    var result;
-    var first_number = Number(prompt("Введите первое число:"));
-    var second_number = Number(prompt("Введите второе число:"));
-    var button_type = prompt("Введите операцию - доступны '+', '-', '*', '/'");
-    switch (button_type) {
-      case '+':
-        result = first_number + second_number;
-        break;
-      case '-':
-        result = first_number - second_number;
-        break;
-      case '*':
-        result = first_number * second_number;
-        break;
-      case '/':
-        result = first_number / second_number;
-        break;
+    function calculator() {
+        var result;
+        var first_number = Number(prompt("Введите первое число:"));
+        var second_number = Number(prompt("Введите второе число:"));
+        var button_type = prompt("Введите операцию - доступны '+', '-', '*', '/'");
+        switch (button_type) {
+            case '+':
+                result = first_number + second_number;
+                break;
+            case '-':
+                result = first_number - second_number;
+                break;
+            case '*':
+                result = first_number * second_number;
+                break;
+            case '/':
+                result = first_number / second_number;
+                break;
+        }
+        alert(`${first_number} ${button_type} ${second_number} = ${result}`);
     }
-    // alert(result)
-    alert(`${first_number} ${button_type} ${second_number} = ${result}`);
-// `hi ${icon}`
-  }
 
-  function guess_number(){
-      var number = Number(prompt("Задумайте число, умножьте его на два и прибавьте 7. Введите результат вычислений:"));
-      var result = (number - 7)/2;
-      alert(`Вы задумали ${result}`);
-  }
+    function guess_number() {
+        var number = Number(prompt("Задумайте число, умножьте его на два и прибавьте 7. Введите результат вычислений:"));
+        var result = (number - 7) / 2;
+        alert(`Вы задумали ${result}`);
+    }
 
-  function age_task(){
-    var name = prompt("Введите имя:");
-    var birthday = new Date(prompt("введите дату рождения в формате YYYY-MM-DD"));
-    var current_year = new Date().getFullYear()
-    var age = current_year - birthday.getFullYear();
-    var result = `${name}, ${age} полных лет`;
-    document.getElementById("age_task_tag").innerHTML = result;
-  }
+    function age_task() {
+        var name = prompt("Введите имя:");
+        var birthday = new Date(prompt("введите дату рождения в формате YYYY-MM-DD"));
+        var current_year = new Date().getFullYear()
+        var age = current_year - birthday.getFullYear();
+        var result = `${name}, ${age} полных лет`;
+        document.getElementById("age_task_tag").innerHTML = result;
+    }
 </script>
 
 </body>
