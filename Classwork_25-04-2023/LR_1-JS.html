@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+        <p class="master2">i love javascript</p>
+        <p class="master2">i love react</p>
+        <h1 class="master2">i want a job</h1>
+
+        <button id="btn">click me</button>
+
+ <script>
+
+ const btn = document.getElementById('btn')
+
+        btn.addEventListener('click', function master(){
+            var master = document.getElementsByClassName("master2");
+            master[2].innerHTML = 'i need a job';
+        })
+
+</script>
+
+
+<script>
+fetch('https://644812037bb84f5a3e518801.mockapi.io/test')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
+</script>
+
+
+</body>
+</html>
