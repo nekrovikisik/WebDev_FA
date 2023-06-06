@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<p class="master2">i love javascript</p>-->
+<!--<p class="master2">i love react</p>-->
+<!--<h1 class="master2">i want a job</h1>-->
+
+<!--<button id="btn">click me</button>-->
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Number</th>
+    </tr>
+    </thead>
+</table>
+
+<script>
+
+    const btn = document.getElementById('btn')
+
+    btn.addEventListener('click', function master() {
+        var master = document.getElementsByClassName("master2");
+        master[2].innerHTML = 'i need a job';
+    })
+
+</script>
+
+
+<script>
+    fetch('https://647f647ac246f166da90ace3.mockapi.io/1')
+        .then(response => response.json())
+        .then(data => {
+            const table = document.getElementById('dataTable');
+
+            const filterData = data.map(item => ({
+                id: item.id,
+                num: Math.floor(Math.random() * 1000)
+            }));
+
+            filterData.forEach(item => {
+                const row = createTableRow(item);
+                table.appendChild(row);
+            });
+        });
+
+    function createTableRow(item) {
+        const row = document.createElement('tr');
+
+        const idCell = document.createElement('td');
+        idCell.innerHTML = item.id;
+        row.appendChild(idCell);
+
+        const numCell = document.createElement('td');
+        numCell.innerHTML = item.num;
+        row.appendChild(numCell);
+
+        return row;
+    }
+</script>
+
+
+</body>
+</html>

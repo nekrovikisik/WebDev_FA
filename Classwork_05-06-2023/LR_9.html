@@ -1,0 +1,60 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script>
+    function Complete1() {
+        if (document.Sel3.Pwd.value.split('').map(ch => ch === ' ' ? 1 : 0).reduce((a, b) => a + b) > 1) {
+            alert('Нельзя указывать пробелы в пароле')
+        }
+        ;
+        if (document.Sel3.email_.value.split('').map(ch => ch === '@' ? 1 : 0).reduce((a, b) => a + b) === 1) {
+            console.log(document.Sel3.Pwd.value);
+            console.log(document.Sel3.Pwd1.value);
+            if (document.Sel3.Pwd.value === document.Sel3.Pwd1.value)
+                alert("Вас зарегистрировали\nemail_=" + document.Sel3.email_.value + "\nPassword=" + document.Sel3.Pwd.value);
+            else
+                alert("Ошибка при вводе пароля\nПопробуйте еще раз");
+        } else {
+            alert('Должна быть собачка в email')
+        }
+    };
+
+    //-->
+    </script>
+</head>
+<body>
+<div class="card">
+    <div class="card-header">
+        <h3 class="text-center">Вход</h3>
+        <div class="card-body">
+
+            <FORM NAME="Sel3">
+                <TABLE>
+                    <TR>
+                        <TD><B>Идентификатор:</B></TD>
+                        <TD><INPUT NAME="email_" SIZE=20
+                                   onBlur="this.value=this.value.toUpperCase()"></TD>
+                    </TR>
+                    <TR>
+                        <TD><B>Пароль:</B></TD>
+                        <TD><INPUT TYPE="password" NAME="Pwd" SIZE=20
+                                   onFocus="this.select();"></TD>
+                    </TR>
+                    <TR>
+                        <TD><B>Проверка пароля:</B></TD>
+                        <TD><INPUT TYPE="password" NAME="Pwd1" SIZE=20
+                                   onFocus="this.select();"></TD>
+                    </TR>
+                </TABLE>
+                <INPUT TYPE="button" VALUE="Готово" onClick="Complete1();">
+                <INPUT TYPE="reset" VALUE="Сброс">
+            </FORM>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
